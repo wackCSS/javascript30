@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+
+// u u d d l r l r a b a b
+
+const konamiCode = [38, 38, 40, 40];
+let keyArray = [];
+
+const trimArray = function(){
+  if (keyArray.length > 4){
+    keyArray.shift();
+  }
+};
+
+const compareArrays = function() {
+  let result;
+
+  for (var i = 0; i < keyArray.length; i++) {    
+    if(keyArray[i] === konamiCode[i]) {
+      result = true;
+    } else {
+      result = false;
+    }    
+  }
+
+  return result; 
+};
+
+window.addEventListener('keyup', function(e){
+  
+  keyArray.push(e.which);
+  trimArray();
+  //console.log(keyArray, keyArray.length);
+
+  if(keyArray.length === 4){    
+    const isActiveCode = compareArrays();
+  }
+});
+
+// https://javascript30.com/account/access/5889f86cbaecf135b3fa7086/view/8c9923be54
+// 1:04
+</script>
+</body>
+</html>

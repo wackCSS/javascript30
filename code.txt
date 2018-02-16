@@ -1,0 +1,11 @@
+var calendar = $('#calendar_content');
+var rightCol = $('#right_container');
+var newCal = calendar.clone(true);
+var newStyle = 'padding-right: 10px; padding-left: 10px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; position: relative; -webkit-box-sizing: border-box; box-sizing: border-box; border-color: #333; border-style: solid; text-decoration: none; width: 100%; font-family: montserrat; background-repeat: initial; background-origin: initial;';
+
+newCal.attr({
+    id: 'calendar_content_2',
+    style: newStyle
+});
+
+newCal.appendTo(rightCol);
